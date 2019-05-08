@@ -85,7 +85,7 @@ từ email đến danh sách tạp hóa.
 
 Đây là một số ví dụ về những gì bạn có thể làm với Markdown.
 
-####Websites.
+#### Websites.
 
 Markdown được thiết kế cho web, do đó, không có gì ngạc nhiên khi có rất nhiều ứng dụng được thiết kế đặc biệt để tạo 
 nội dung trang web.
@@ -105,7 +105,7 @@ Nếu bạn thích sử dụng hệ thống quản lý nội dung (CMS) để cu
 Nếu bạn là một người dùng WordPress, bạn sẽ rất vui khi biết có hỗ trợ Mark Markdown cho các trang web được lưu trữ 
 trên WordPress.com. Các trang web WordPress tự lưu trữ có thể sử dụng [plugin Jetpack](https://jetpack.com/support/markdown/).
 
-####Documents
+#### Documents
 
 Markdown không có tất cả những gì hay ho của các trình xử lý văn bản như Microsoft Word, nhưng nó đủ tốt để tạo các tài 
 liệu cơ bản như bài tập và chữ cái. Bạn có thể sử dụng ứng dụng soạn thảo tài liệu Markdown để tạo và xuất các tài liệu 
@@ -120,7 +120,7 @@ Dưới đây là một số ứng dụng soạn thảo tài liệu Markdown
 * `Windows`: [MarkdownPad](http://markdownpad.com/)
 * `Web`: [Dillinger](https://dillinger.io/) or [StackEdit](https://stackedit.io/)
 
-####Notes
+#### Notes
 
 Trong gần như mọi cách, Markdown là cú pháp lý tưởng để ghi chú. Đáng buồn thay, Evernote và OneNote, hai trong số các 
 ứng dụng ghi chú phổ biến nhất, hiện tại không hỗ trợ Markdown. Tin vui là một số ứng dụng ghi chú khác hỗ trợ Markdown:
@@ -182,7 +182,7 @@ tốt để tạo một trang web tài liệu từ các tệp Markdown.
 
 Có rất nhiều tài nguyên bạn có thể sử dụng để học Markdown. Dưới đây là một số tài nguyên giới thiệu khác:
 
-* [John Gruber’s Markdown documentation](John Gruber’s Markdown documentation): Hướng dẫn ban đầu được viết bởi người 
+* [John Gruber’s Markdown documentation](https://daringfireball.net/projects/markdown/): Hướng dẫn ban đầu được viết bởi người 
 tạo ra Markdown.
 
 * [Markdown tutorial](https://www.markdowntutorial.com/): Một trang web nguồn mở cho phép bạn dùng thử Markdown trong 
@@ -191,4 +191,4 @@ trình duyệt web của bạn.
 * [Awesome Markdown](https://github.com/mundimark/awesome-markdown): Một danh sách các công cụ Markdown và tài nguyên 
 học tập.
 
-* [Cheat sheet](): Là một tổng quan nhanh những gì bạn có thể làm với markdown.
+* [Cheat sheet](./cheat-sheet.md): Là một tổng quan nhanh những gì bạn có thể làm với markdown.
