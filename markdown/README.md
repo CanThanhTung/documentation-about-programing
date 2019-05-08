@@ -4,7 +4,7 @@
 
 <center> <h1>Getting Started</h1> </center>
 
-#####Tổng quan về Markdown, cách thức hoạt động và những gì bạn có thể làm với nó.
+Tổng quan về Markdown, cách thức hoạt động và những gì bạn có thể làm với nó.
 
 Markdown là  lightweight markup language mà có thể sự dụng để thêm các thành phần định dạng vào văn bản gốc. Được tạo
 bởi John Gruber vào năm 2004, Markdown bây giờ là một markup language phổ biến nhất thế giới.
