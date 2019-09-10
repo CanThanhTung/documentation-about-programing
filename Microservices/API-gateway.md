@@ -15,10 +15,10 @@ bằng cách kết nối với trang chủ một lần và sắp xếp các yêu
 service cần thiết. Thêm vào đó, bạn có thể phát triển độc lập các service siêu
 nhỏ của mình mà không phải thay đổi tích hợp client.
 
-  Risk team trong PayPal đã phải đối mặt với một tình huống tương tự - chúng tôi
+  Risk team trong PayPal đã phải đối mặt với một tình huống tương tự - họ
 đã phát triển hệ sinh thái các risk services để tạo ra các trạm kiểm soát tinh
 vi, nhưng việc kết hợp chặt chẽ với các client thanh toán PayPal dẫn đến ma sát
-trong việc di chuyển. Chúng tôi đã xây dựng Cổng API để tách các services của
+trong việc di chuyển. họ đã xây dựng Cổng API để tách các services của
 mình với client. Điều này dẫn đến các API gọn gàng, được xác định rõ ràng được
 lưu trữ trong một single gateway service, trong đó một API có thể tận dụng các
 khả năng của Risk platform, chống lại các API riêng lẻ bị phân rã. Là một điểm
@@ -37,15 +37,19 @@ API Gateway và minh họa cách các nguyên tắc này được sử dụng đ
 đầu tư vào công nghệ phù hợp có thể hỗ trợ lưu lượng truy cập cao mà không ảnh
 hưởng đến hiệu suất. Asynchronous non-blocking I/O (NIO) dựa trên frameworks là
 phù hợp nhất cho các trường hợp như vậy. Một trong những frameworks ưa thích là
-Netty và sử dụng nó làm bộ chứa HTTP đã được chứng minh là mang lại hiệu suất
-tăng mong muốn. Thông thường, API Gateway thực hiện các cuộc gọi đến nhiều backend services cho một request. Nếu các backend microservices của bạn mất nhiều thời
-gian để xử lý, tài nguyên thread trong Gateway của bạn có thể bị cạn kiệt gây ra
-tình trạng đói và do đó sẽ ảnh hưởng đến Cổng ATB (Availability to Business). Do
-đó, viết API code theo cách khai báo bằng cách sử dụng coding pattern là lựa
-chọn phù hợp cho các ứng dụng đó. Ví dụ: người ta có thể sử dụng CompleteableFuture
-của JAVA 8 làm reactive abstraction. Để kết luận, đối với một ứng dụng có lưu
-lượng truy cập cao như API Gateway, tốt nhất nên sử dụng framework NIO và
-reactive programming model để sử dụng tối ưu các tài nguyên mang lại hiệu suất cao. Biểu ồ sau so sánh độ trễ (tính bằng ms) của ứng dụng Gateway sử dụng Tomcat và Netty làm HTTP container.
+[Netty](https://netty.io/) và sử dụng nó làm bộ chứa HTTP đã được chứng minh là 
+mang lại hiệu suất tăng mong muốn. Thông thường, API Gateway thực hiện các cuộc 
+gọi đến nhiều backend services cho một request. Nếu các backend microservices của 
+bạn mất nhiều thời gian để xử lý, tài nguyên thread trong Gateway của bạn có thể 
+bị cạn kiệt gây ra tình trạng đói và do đó sẽ ảnh hưởng đến Cổng ATB 
+(Availability to Business). Do đó, viết API code theo cách khai báo bằng cách 
+sử dụng coding pattern là lựa chọn phù hợp cho các ứng dụng đó. Ví dụ: người ta 
+có thể sử dụng CompleteableFuture của JAVA 8 làm reactive abstraction. Để kết 
+luận, đối với một ứng dụng có lưu lượng truy cập cao như API Gateway, tốt nhất 
+nên sử dụng framework [NIO](https://en.wikipedia.org/wiki/Non-blocking_I/O_(Java)) 
+và reactive programming model để sử dụng tối ưu các tài nguyên mang lại hiệu suất 
+cao. Biểu đồ sau so sánh độ trễ (tính bằng ms) của ứng dụng Gateway sử dụng Tomcat 
+và Netty làm HTTP container.
 
 <center>
   <img src="/Microservices/img/1_fSznVKCVZxS1wVC8K_k6eQ.png">
@@ -57,13 +61,14 @@ reactive programming model để sử dụng tối ưu các tài nguyên mang l�
 API request tới nhiều backend microservices. Để làm điều này một cách hiệu quả,
 người ta cần xem xét các khía cạnh quan trọng sau:
 
-* Protocol Translation: request API gửi đến có thể ở một định dạng cụ thể có thể khác với các downstream services của bạn. Ví dụ: API Gateway nhận các requests
+* Protocol Translation: request API gửi đến có thể ở một định dạng cụ thể có thể 
+khác với các downstream services của bạn. Ví dụ: API Gateway nhận các requests
 HTTPS RESTful, trong khi một số downstream services. có thể mong đợi Protobuf.
 Gateway server cần đảm bảo rằng các connectors và translators được tích hợp.
 
 * Serial/Parallel invocation patterns: API Gateway sẽ cho phép gọi các downstream
 services trong serial or parallel patterns. Cùng với đó, hỗ trợ cho conditional
-routing  nên có sẵn.
+routing nên có sẵn.
 
 * Configurable routing: Routing patterns sẽ không yêu cầu code mới (hoặc code tối
 thiểu) để tạo route mới đến backend microservice. Nói cách khác, service routing
@@ -74,7 +79,8 @@ code vẫn duy trì trạng thái tinh gọn khi các API mới được sử d�
 
   API Gateway có thể điều phối các requests tới nhiều downstream services như
 chúng tôi đã đề cập trong phần trên. Tuy nhiên, client có thể cần một single
-response. Trong các trường hợp như vậy, API Gateway sẽ chịu trách nhiệm hợp nhất các response khác nhau và gửi một response duy nhất, có ý nghĩa. Một cách hiệu
+response. Trong các trường hợp như vậy, API Gateway sẽ chịu trách nhiệm hợp nhất 
+các response khác nhau và gửi một response duy nhất, có ý nghĩa. Một cách hiệu
 quả để đạt được điều này là một bảng tra cứu. Một bảng tra cứu xác định các
 hoán vị của các câu trả lời và đưa ra kết quả cuối cùng cho một sự kết hợp cụ
 thể. Ví dụ: giả sử một gateway service gọi n microservice, nó có thể hợp nhất n
