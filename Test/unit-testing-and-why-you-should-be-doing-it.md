@@ -1,8 +1,8 @@
 # Unit Testing và tại sao nên viết test
 
-<h1 aglin="center">
+<h3 aglin="center">
 <img src="/Test/img/photo-1518349619113-03114f06ac3a.jpeg"/>
-</h1>
+</h3>
 
 Tất cả đều biết rằng testing cho application là rất quan trọng, Vì nó đảm bảo
 security, sự hài lòng của khách hàng và tiết kiệm tiền trong thời gian dài.
@@ -26,9 +26,9 @@ xác của nó bằng trình điều khiển, Unit testing frameworks, mock obje
 test. Chẳng hạn, chính xác thì unit là gì? mock có nghĩa là gì, Làm thế nào để
 biết liệu có thực sự làm unit test không?
 
-<h1 aglin="center">
+<h3 aglin="center">
 <img src="/Test/img/level-of-testing.png"/>
-</h1>
+</h3>
 
 ## Unit là gì?
 
